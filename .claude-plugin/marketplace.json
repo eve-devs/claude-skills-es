@@ -1,0 +1,16 @@
+{
+  "name": "claude-skills-es",
+  "owner": {
+    "name": "Evelyn Arias",
+    "url": "https://github.com/eve-devs"
+  },
+  "metadata": {
+    "description": "Skills de Claude Code en espanol para devs de LATAM. Se activan cuando escribes en espanol."
+  },
+  "plugins": [
+    {
+      "name": "claude-skills-es",
+      "source": "./"
+    }
+  ]
+}

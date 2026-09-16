@@ -1,0 +1,13 @@
+{
+  "name": "claude-skills-es",
+  "version": "0.1.0",
+  "description": "Skills de Claude Code en espanol: commits limpios, exploracion de repos, READMEs reales, PRs listos e ingles tecnico.",
+  "author": {
+    "name": "Evelyn Arias",
+    "url": "https://github.com/eve-devs"
+  },
+  "homepage": "https://github.com/eve-devs/claude-skills-es",
+  "repository": "https://github.com/eve-devs/claude-skills-es",
+  "license": "MIT",
+  "keywords": ["claude-code", "skills", "espanol", "latam", "developer-tools"]
+}
