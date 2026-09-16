@@ -41,3 +41,10 @@ Prueba también que **no** se encienda cuando no toca. Una skill que se activa d
 - Sin emojis dentro de los `SKILL.md`.
 - Ejemplos reales de código antes que explicaciones abstractas.
 - Cuando des una regla, di por qué. Claude sigue mejor las reglas que entiende.
+
+## Regenerar el GIF de demo
+
+```bash
+python3 -m venv venv && ./venv/bin/pip install Pillow
+./venv/bin/python dev/make-demo.py
+```

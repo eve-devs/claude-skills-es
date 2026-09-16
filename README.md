@@ -4,6 +4,10 @@ Skills para [Claude Code](https://claude.com/claude-code) escritas en español, 
 
 La mayoría de las skills que existen están en inglés — y como Claude decide qué skill activar leyendo su descripción, una skill con triggers en inglés simplemente no se enciende cuando escribes "prepara el PR" o "explícame este repo". Estas sí.
 
+![La skill pr-listo revisando una rama antes de abrir el pull request](assets/demo.gif)
+
+<sub>Recreación de una sesión, generada con [`dev/make-demo.py`](dev/make-demo.py).</sub>
+
 ## ¿Qué es una skill?
 
 Una skill es una carpeta con un archivo `SKILL.md` adentro: instrucciones escritas en markdown que le enseñan a Claude a hacer una tarea concreta de una forma concreta.
@@ -78,21 +82,6 @@ Eso es todo. Las skills se activan solas cuando lo que pides coincide con lo que
 | **readme-pro** | Escribe o arregla un README partiendo del código, verificando que cada comando que documenta exista de verdad. | "hazme un README", "documenta este proyecto" |
 | **pr-listo** | Prepara el PR completo y hace la auto-revisión antes: qué tests faltan, qué migración no tiene reversa, qué rompe. | "prepara el PR", "¿está listo para review?" |
 | **ingles-tecnico** | Standups, code reviews, Slack y correos difíciles en inglés de trabajo. Corrige los calcos del español y te explica por qué. | "cómo digo esto en inglés", "revisa mi inglés" |
-
-## Cómo se ve
-
-```
-> prepara el PR de esta rama
-
-Revisé los 8 commits contra origin/main. Antes de la descripción,
-tres cosas que el reviewer iba a encontrar:
-
-  ⚠  src/auth/interceptor.ts:44 — console.log con el token completo
-  ⚠  migrations/0012_add_sessions.sql — no tiene down
-  ?  services/rate-limiter.ts — lógica nueva sin ningún test
-
-¿Los arreglo antes de abrir el PR, o lo subo como draft?
-```
 
 ## Usar una skill sin instalar el plugin
 
