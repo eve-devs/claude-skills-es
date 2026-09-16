@@ -56,7 +56,7 @@ Today: starting on the rate limiter.
 Blockers: waiting on staging credentials from infra.
 ```
 
-**Code review — pedir un cambio sin sonar agresivo:**
+**Code review: pedir un cambio sin sonar agresivo**
 ```
 Could we pull this into a helper? It's duplicated in `auth.ts` too.
 ```
@@ -75,7 +75,7 @@ Patron: hecho -> que hiciste igual -> impacto concreto -> pedido especifico.
 
 **Pedir mas tiempo:**
 ```
-This is taking longer than I estimated — the migration touches three
+This is taking longer than I estimated. The migration touches three
 services instead of one. Realistic date is Thursday. Happy to cut scope
 if Tuesday matters more.
 ```
@@ -89,13 +89,15 @@ X, and we'd lose Y. What if we did Z instead?
 
 ## Frases que suben el registro sin sonar forzadas
 
-- "Heads up:" — aviso corto
-- "Quick question:" — abre sin disculparse
-- "Worth a look?" — sugiere sin imponer
-- "Makes sense to me." — aprueba sin efusividad
-- "I'd lean toward X." — opina con propiedad
-- "Let me dig into it and get back to you." — gana tiempo profesionalmente
-- "Just to make sure I understood:" — confirma sin admitir confusion
+| Frase | Para que sirve |
+|---|---|
+| "Heads up:" | dar un aviso corto |
+| "Quick question:" | abrir sin disculparse |
+| "Worth a look?" | sugerir sin imponer |
+| "Makes sense to me." | aprobar sin efusividad |
+| "I'd lean toward X." | opinar con propiedad |
+| "Let me dig into it and get back to you." | ganar tiempo profesionalmente |
+| "Just to make sure I understood:" | confirmar sin admitir confusion |
 
 ## Cuando el usuario ya escribio algo
 
@@ -109,5 +111,5 @@ Si el original ya esta bien, dilo y no toques nada.
 
 - Subir el registro de mas: un mensaje de Slack que parece carta notarial.
 - Traducir el humor o los modismos. Casi nunca cruzan; se quitan.
-- Pedir disculpas en exceso — en ingles de trabajo lee como falta de confianza.
+- Pedir disculpas en exceso: en ingles de trabajo lee como falta de confianza.
 - Mandar un parrafo donde una linea alcanza.

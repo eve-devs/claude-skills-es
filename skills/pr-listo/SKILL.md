@@ -13,7 +13,7 @@ description: >
 
 Un PR bien armado se aprueba mas rapido porque le ahorra trabajo al reviewer. Esta skill produce ese PR y, antes, encuentra lo que el reviewer iba a encontrar.
 
-## Paso 1 — Leer la rama completa
+## Paso 1: leer la rama completa
 
 ```bash
 BASE=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@.*/@@' || echo main)
@@ -24,7 +24,7 @@ git diff "origin/$BASE"...HEAD
 
 Tres puntos (`...`), no dos: compara contra el ancestro comun, que es lo que el reviewer vera en GitHub.
 
-## Paso 2 — Auto-revision
+## Paso 2: auto-revision
 
 Antes de escribir la descripcion, busca lo que falta. Reporta cada hallazgo con archivo y linea:
 
@@ -42,7 +42,7 @@ Antes de escribir la descripcion, busca lo que falta. Reporta cada hallazgo con 
 - Comportamiento documentado en el README que este PR cambia
 - Archivos de mas de ~400 lineas de diff que probablemente deban dividirse
 
-## Paso 3 — Escribir el PR
+## Paso 3: escribir el PR
 
 **Titulo:** mismo formato que los commits del repo (`git log --oneline -20` para confirmar). Describe el resultado, no el proceso.
 
@@ -77,7 +77,7 @@ Pasos numerados y reproducibles.
 
 Escribe la descripcion en el idioma del repo. Si los PRs anteriores estan en ingles, este tambien.
 
-## Paso 4 — Crear el PR
+## Paso 4: crear el PR
 
 Confirma con el usuario antes de publicar nada. Publicar un PR es una accion hacia afuera: el equipo recibe notificaciones.
 

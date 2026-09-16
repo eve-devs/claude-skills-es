@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genera assets/demo.gif — una recreacion de una sesion de Claude Code
+Genera assets/demo.gif: una recreacion de una sesion de Claude Code
 usando la skill pr-listo.
 
 Uso:       python3 dev/make-demo.py
@@ -57,7 +57,7 @@ def chrome(d):
     d.line([(0, 44), (W, 44)], fill=BORDER)
     for i, c in enumerate([(255, 95, 86), (255, 189, 46), (39, 201, 63)]):
         d.ellipse([22 + i * 21, 16, 34 + i * 21, 28], fill=c)
-    t = "~/proyecto-api  —  claude"
+    t = "~/proyecto-api  ·  claude"
     d.text(((W - fonts.getlength(t)) / 2, 15), t, font=fonts, fill=DIM)
 
 
@@ -141,4 +141,4 @@ pal = frames[-1].quantize(colors=48, method=Image.MEDIANCUT)
 qf = [f.quantize(palette=pal, dither=Image.Dither.NONE) for f in frames]
 qf[0].save("assets/demo.gif", save_all=True, append_images=qf[1:],
            duration=delays, loop=0, optimize=True, disposal=1)
-print(f"assets/demo.gif — {len(qf)} cuadros, {W}x{H}")
+print(f"assets/demo.gif: {len(qf)} cuadros, {W}x{H}")

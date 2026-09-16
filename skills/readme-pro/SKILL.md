@@ -27,7 +27,7 @@ Un README con un `npm run dev` que no existe es peor que no tener README: quema 
 
 ## Estructura
 
-Este orden no es decorativo — sigue el momento de duda del lector.
+Este orden no es decorativo: sigue el momento de duda del lector.
 
 ```markdown
 # Nombre del proyecto
@@ -72,10 +72,10 @@ Siempre en tabla, nunca en prosa:
 
 | Variable | Obligatoria | Default | Descripcion |
 |---|---|---|---|
-| `DATABASE_URL` | si | — | Cadena de conexion a Postgres |
+| `DATABASE_URL` | si | ninguno | Cadena de conexion a Postgres |
 | `PORT` | no | `3000` | Puerto del servidor HTTP |
 
-Saca los nombres del codigo real (`grep -rn "process.env\.\|os.environ\|getenv" src/`), no del `.env` local del usuario — y **nunca** copies valores reales.
+Saca los nombres del codigo real (`grep -rn "process.env\.\|os.environ\|getenv" src/`), no del `.env` local del usuario, y **nunca** copies valores reales.
 
 ## Arreglar un README existente
 
@@ -91,11 +91,11 @@ Luego propon los cambios por seccion. Respeta el tono y el idioma que ya tiene e
 
 ## Idioma
 
-Si el proyecto apunta a un publico hispanohablante, README en espanol. Si es open source con intencion de alcance internacional, ingles — y opcionalmente un `README.es.md` enlazado desde arriba. Pregunta si no queda claro.
+Si el proyecto apunta a un publico hispanohablante, README en espanol. Si es open source con intencion de alcance internacional, ingles, y opcionalmente un `README.es.md` enlazado desde arriba. Pregunta si no queda claro.
 
 ## Errores comunes
 
-- Plantillas con secciones vacias ("## Roadmap — TBD").
+- Plantillas con secciones vacias ("## Roadmap: TBD").
 - Documentar la instalacion desde el codigo fuente cuando el 95% de la gente solo quiere `npm install paquete`.
 - Un ejemplo de uso que no compila.
 - Mezclar README (para usuarios) con notas de arquitectura (para contribuidores). Eso va en `CONTRIBUTING.md` o `docs/`.

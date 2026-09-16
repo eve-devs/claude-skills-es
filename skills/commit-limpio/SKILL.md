@@ -17,7 +17,7 @@ Genera commits que un reviewer pueda leer en seis meses y entender **por que** s
 
 Nunca escribas un mensaje de commit sin haber leido el diff. Un mensaje inventado a partir de nombres de archivo es ruido.
 
-## Paso 1 — Leer el estado real
+## Paso 1: leer el estado real
 
 ```bash
 git status --short
@@ -28,7 +28,7 @@ git diff --staged     # cambios ya en stage
 
 Si el diff es enorme, lee primero `--stat` para ubicarte y luego el diff de los archivos que importan.
 
-## Paso 2 — Revisar antes de commitear
+## Paso 2: revisar antes de commitear
 
 Bloquea el commit y avisa al usuario si encuentras:
 
@@ -38,7 +38,7 @@ Bloquea el commit y avisa al usuario si encuentras:
 
 Estas cosas se reportan, no se borran por tu cuenta.
 
-## Paso 3 — Agrupar en commits atomicos
+## Paso 3: agrupar en commits atomicos
 
 Un commit = un cambio con sentido propio. Si el mensaje necesita un "y" para describirse, son dos commits.
 
@@ -49,9 +49,9 @@ Un commit = un cambio con sentido propio. Si el mensaje necesita un "y" para des
 | Varios archivos, un solo cambio logico | Un solo commit |
 | Bump de dependencia + el codigo que lo usa | Juntos, si uno rompe sin el otro |
 
-Para separar por partes de un mismo archivo usa `git add -p` — pero como `-i`/`-p` son interactivos y no funcionan en este entorno, aplica los hunks con `git apply --cached` a partir de un parche, o pide al usuario que corra `git add -p` el mismo.
+Para separar por partes de un mismo archivo usa `git add -p`, pero como `-i`/`-p` son interactivos y no funcionan en este entorno, aplica los hunks con `git apply --cached` a partir de un parche, o pide al usuario que corra `git add -p` el mismo.
 
-## Paso 4 — Escribir el mensaje
+## Paso 4: escribir el mensaje
 
 Formato Conventional Commits:
 
@@ -85,7 +85,7 @@ bien: fix(auth): evitar refresh infinito al expirar el token
       Closes #482
 ```
 
-## Paso 5 — Confirmar antes de ejecutar
+## Paso 5: confirmar antes de ejecutar
 
 Muestra el plan (que archivos van en que commit, con que mensaje) y espera luz verde antes de correr `git commit`. Nunca hagas `push` salvo que te lo pidan explicitamente.
 

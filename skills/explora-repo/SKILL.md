@@ -17,7 +17,7 @@ Produce un mapa util de un codebase desconocido en una pasada. El objetivo no es
 
 Prioriza lo que el codigo hace sobre lo que el README dice que hace. Los READMEs mienten por omision; el codigo no.
 
-## Paso 1 — Orientarse (barato, primero)
+## Paso 1: orientarse (barato, primero)
 
 ```bash
 ls -la
@@ -30,7 +30,7 @@ Identifica el stack por los archivos de manifiesto:
 
 | Archivo | Stack |
 |---|---|
-| `package.json` | Node / JS / TS — mira `scripts` y `dependencies` |
+| `package.json` | Node / JS / TS. Mira `scripts` y `dependencies` |
 | `pyproject.toml`, `requirements.txt` | Python |
 | `go.mod` | Go |
 | `Cargo.toml` | Rust |
@@ -41,7 +41,7 @@ Identifica el stack por los archivos de manifiesto:
 
 `docker-compose.yml` y `.env.example` son oro: te dicen de que depende el proyecto para arrancar.
 
-## Paso 2 — Encontrar el punto de entrada
+## Paso 2: encontrar el punto de entrada
 
 No adivines. Buscalo:
 
@@ -56,7 +56,7 @@ grep -rn "if __name__" --include="*.py" . | head
 grep -rln "func main()" --include="*.go" . | head
 ```
 
-## Paso 3 — Seguir un flujo completo de punta a punta
+## Paso 3: seguir un flujo completo de punta a punta
 
 Esto es lo que separa un mapa util de un indice inutil. Elige **una** operacion representativa (un login, un listado, el endpoint mas obvio) y siguela:
 
@@ -66,7 +66,7 @@ peticion HTTP -> ruta -> middleware -> controlador -> servicio -> acceso a datos
 
 Anota los nombres de archivo y linea reales de cada salto. Ese recorrido le ensena al lector el patron que sigue todo lo demas.
 
-## Paso 4 — Ubicar las piezas clave
+## Paso 4: ubicar las piezas clave
 
 - **Modelo de datos**: schemas, entidades, migraciones (`migrations/`, `prisma/schema.prisma`, `models/`)
 - **Configuracion**: como se leen las variables de entorno y cuales son obligatorias
@@ -74,7 +74,7 @@ Anota los nombres de archivo y linea reales de cada salto. Ese recorrido le ense
 - **Tests**: donde viven, como se corren, y que tanto cubren de verdad
 - **Frontera con el exterior**: llamadas a APIs de terceros, colas, webhooks
 
-## Paso 5 — Entregar el mapa
+## Paso 5: entregar el mapa
 
 Formato de salida:
 
@@ -108,7 +108,7 @@ Deuda tecnica visible, patrones raros, cosas que parecen trampa.
 
 No leas todo. Muestrea:
 - Los 10 archivos mas grandes (`find . -name "*.ts" -exec wc -l {} + | sort -rn | head`)
-- Los 10 archivos mas modificados (`git log --format= --name-only | sort | uniq -c | sort -rn | head`) — ahi esta el corazon del proyecto
+- Los 10 archivos mas modificados (`git log --format= --name-only | sort | uniq -c | sort -rn | head`). Ahi esta el corazon del proyecto
 
 ## Errores comunes
 

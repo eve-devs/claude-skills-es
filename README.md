@@ -2,7 +2,7 @@
 
 Skills para [Claude Code](https://claude.com/claude-code) escritas en español, para devs de LATAM.
 
-La mayoría de las skills que existen están en inglés — y como Claude decide qué skill activar leyendo su descripción, una skill con triggers en inglés simplemente no se enciende cuando escribes "prepara el PR" o "explícame este repo". Estas sí.
+La mayoría de las skills que existen están en inglés, y como Claude decide qué skill activar leyendo su descripción, una skill con triggers en inglés simplemente no se enciende cuando escribes "prepara el PR" o "explícame este repo". Estas sí.
 
 ![La skill pr-listo revisando una rama antes de abrir el pull request](assets/demo.gif)
 
@@ -52,7 +52,7 @@ Al abrir Claude Code
 
 Esto se llama **carga progresiva**, y tiene una consecuencia práctica muy importante: puedes tener cincuenta skills instaladas sin que se estorben entre sí, porque solo entra en contexto la que hace falta.
 
-También explica por qué **la descripción vale más que el cuerpo**. Es lo único que Claude ve al decidir. Una skill brillante con una descripción vaga nunca se enciende — y una descripción demasiado amplia se enciende cuando no toca, que es peor.
+También explica por qué **la descripción vale más que el cuerpo**. Es lo único que Claude ve al decidir. Una skill brillante con una descripción vaga nunca se enciende, y una descripción demasiado amplia se enciende cuando no toca, que es peor.
 
 ### Dónde viven
 
@@ -96,7 +96,7 @@ cp -r claude-skills-es/skills/commit-limpio ~/.claude/skills/
 
 ## Escribir tu propia skill
 
-Crea `~/.claude/skills/mi-skill/SKILL.md` y ya está — no hay nada más que registrar.
+Crea `~/.claude/skills/mi-skill/SKILL.md` y ya está, no hay nada más que registrar.
 
 Tres cosas que aprendí escribiendo estas cinco:
 
@@ -106,8 +106,8 @@ Tres cosas que aprendí escribiendo estas cinco:
 
 ## Contribuir
 
-Los PRs son bienvenidos — sobre todo skills nuevas en español. Lee [CONTRIBUTING.md](CONTRIBUTING.md).
+Los PRs son bienvenidos, sobre todo skills nuevas en español. Lee [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Licencia
 
-MIT — [Evelyn Arias](https://github.com/eve-devs)
+MIT, de [Evelyn Arias](https://github.com/eve-devs)
