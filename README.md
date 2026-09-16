@@ -4,6 +4,62 @@ Skills para [Claude Code](https://claude.com/claude-code) escritas en español, 
 
 La mayoría de las skills que existen están en inglés — y como Claude decide qué skill activar leyendo su descripción, una skill con triggers en inglés simplemente no se enciende cuando escribes "prepara el PR" o "explícame este repo". Estas sí.
 
+## ¿Qué es una skill?
+
+Una skill es una carpeta con un archivo `SKILL.md` adentro: instrucciones escritas en markdown que le enseñan a Claude a hacer una tarea concreta de una forma concreta.
+
+La diferencia con pegarle un prompt largo cada vez es que **la skill se activa sola**. No tienes que acordarte de ella ni invocarla: tú pides lo que necesitas en lenguaje normal y Claude reconoce cuál aplica.
+
+### Cómo funciona por dentro
+
+Cada `SKILL.md` tiene dos partes:
+
+```markdown
+---
+name: commit-limpio
+description: >
+  Convierte un working tree desordenado en commits atómicos...
+  Usar cuando el usuario diga: "haz commit", "qué mensaje le pongo".
+---
+
+# Commit limpio
+
+## Regla base
+Nunca escribas un mensaje de commit sin haber leído el diff.
+...
+```
+
+El **encabezado** (entre `---`) es la ficha: cómo se llama y cuándo usarla.
+El **cuerpo** son las instrucciones completas.
+
+Y aquí está el truco que hace que todo esto escale:
+
+```
+Al abrir Claude Code
+        ↓
+  lee SOLO las descripciones de todas tus skills   ← barato, ocupa poquísimo
+        ↓
+  tú escribes: "haz commit de esto"
+        ↓
+  hace match con la descripción de commit-limpio
+        ↓
+  recién ahí carga el cuerpo completo del SKILL.md  ← y lo sigue al pie de la letra
+```
+
+Esto se llama **carga progresiva**, y tiene una consecuencia práctica muy importante: puedes tener cincuenta skills instaladas sin que se estorben entre sí, porque solo entra en contexto la que hace falta.
+
+También explica por qué **la descripción vale más que el cuerpo**. Es lo único que Claude ve al decidir. Una skill brillante con una descripción vaga nunca se enciende — y una descripción demasiado amplia se enciende cuando no toca, que es peor.
+
+### Dónde viven
+
+| Ubicación | Alcance |
+|---|---|
+| `~/.claude/skills/` | Todos tus proyectos |
+| `.claude/skills/` dentro de un repo | Solo ese proyecto (y se comparte con tu equipo por git) |
+| Un plugin instalado | Todos tus proyectos, y se actualiza con `git pull` |
+
+Este repo es la tercera opción: un **plugin**, o sea un paquete de varias skills que se instala de una sola vez.
+
 ## Instalación
 
 ```bash
@@ -51,24 +107,9 @@ cp -r claude-skills-es/skills/commit-limpio ~/.claude/skills/
 
 ## Escribir tu propia skill
 
-Una skill son dos cosas: un encabezado y unas instrucciones.
+Crea `~/.claude/skills/mi-skill/SKILL.md` y ya está — no hay nada más que registrar.
 
-```markdown
----
-name: mi-skill
-description: >
-  Qué hace, en una o dos frases. Y luego las frases exactas con las que
-  el usuario la va a pedir — esto es lo que decide si se activa o no.
----
-
-# Mi skill
-
-Las instrucciones que quieres que Claude siga cuando esto se active.
-```
-
-Claude lee **solo la descripción** de todas tus skills al arrancar; carga el resto del archivo únicamente cuando tu petición coincide. Por eso la descripción vale más que el cuerpo: una skill excelente con una descripción vaga nunca se enciende.
-
-Tres cosas que aprendí escribiendo estas:
+Tres cosas que aprendí escribiendo estas cinco:
 
 - **Pon los triggers literales.** No "ayuda con git" sino las frases que la gente teclea: "haz commit", "qué mensaje le pongo".
 - **Escribe reglas, no descripciones.** "Nunca escribas un mensaje sin leer el diff" funciona; "es importante leer el diff" no.
